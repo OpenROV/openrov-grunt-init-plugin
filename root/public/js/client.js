@@ -45,6 +45,14 @@
   {%= name %}.prototype.listen = function listen() {
     var rov = this;
 
+    //This snippet allows you to listen to events coming
+    //from the beaglebone.  Those coulbe be navdata, status, etc...
+    /*
+    this.cockpit.socket.on('navdata', function (data) {
+      rov.dosomethingwith(data);
+    });
+    /*
+
     //This example will put an entry in the pop-up Heads Up Menu
     /*
     var item = {
@@ -55,6 +63,32 @@
       }
     };
     rov.cockpit.emit('headsUpMenu.register', item);
+    */
+
+    //the code below is used to load other asssets that have a path relative to the current
+    //path of the executing javascript file.
+    var jsFileLocation = urlOfJsFile('{%= name %}.js');
+
+    /*
+    $.get(jsFileLocation + '../somefile.txt',function(data){
+      console.log(data);
+    });
+    */
+
+    // If you have more than a couple lines of HTML it might be better
+    // to place them in a seperate .html file. The code below will load
+    // them in to an element.
+    /*
+    $('#divtoloadcontent').load(jsFileLocation + '../template.html',function(data){
+      console.log('template loaded');
+    });
+    */
+
+    //For loading third party libraries that are bower dependencies
+    /*
+    $.getScript('plugin_components/<projectname>/<filetoload>.js',function(){
+      console.log("loaded");
+    });
     */
 
   };
