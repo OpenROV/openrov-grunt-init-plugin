@@ -7,6 +7,10 @@
 ## Installation
 If you haven't already done so, install [grunt-init][].
 
+```
+sudo npm install -g grunt-init
+```
+
 Once grunt-init is installed, place this template in your `~/.grunt-init/` directory. It's recommended that you use git to clone this template into that directory, as follows:
 
 ```
@@ -14,6 +18,7 @@ git clone https://github.com/openrov/openrov-grunt-init-plugin.git ~/.grunt-init
 ```
 
 _(Windows users, see [the documentation][grunt-init] for the correct destination directory path)_
+
 
 ## Usage
 
